@@ -1,4 +1,4 @@
-export const descripciones = [
+export let descripciones = [
     { 
         titulo: "Interconexión de componentes periféricos",
         descripcion: "Los conectores PCI (Peripheral Component Interconnect) y PCIe (PCI Express) en la placa madre permiten la instalación de tarjetas adicionales que amplían las capacidades del sistema. Estas tarjetas pueden incluir tarjetas de sonido, tarjetas de red, tarjetas de expansión USB, entre otras, y permiten añadir funcionalidades o mejorar el rendimiento del ordenador." 
