@@ -60,13 +60,16 @@ root.innerHTML = `
 <div class="info-contenedor"></div>
 `;
 
+
 let filtros = document.querySelector('.filtros');
 let infocontenedor = document.querySelector('.info-contenedor');
 
-// Mostrar información del botón al hacer clic
+let tooltipsActivos = {};
+
 document.querySelectorAll('.btn').forEach((boton, indice) => {
     boton.addEventListener('click', () => {
-        let datos = descripciones[indice];
+        
+        let datos = descripciones[indice]; 
         infocontenedor.innerHTML = `
             <div class="info-contenido">
                 <h1>${datos.titulo}</h1>
@@ -74,17 +77,17 @@ document.querySelectorAll('.btn').forEach((boton, indice) => {
                 <button class="btn-regresar">Regresar</button>
             </div>
         `;
-        // Ocultar filtros
+        // Oculta la sección de filtros
         filtros.classList.add('hidden');
-        // Mostrar información
+        // Muestra el contenedor de información
         infocontenedor.classList.add('visible');
 
-        // Evento al botón de regresar
+        // Evento para el botón de regresar
         document.querySelector('.btn-regresar').addEventListener('click', () => {
-            // Mostrar la sección de filtros y ocultar el contenedor de información
+            // Muestra la sección de filtros 
             filtros.classList.remove('hidden');
             infocontenedor.classList.remove('visible');
-            infocontenedor.innerHTML = ''; // Limpiar el contenido
+            infocontenedor.innerHTML = ''; // Limpia el contenido
         });
     });
 });
@@ -92,20 +95,42 @@ document.querySelectorAll('.btn').forEach((boton, indice) => {
 
 document.querySelectorAll('.checkbox-container input[type="checkbox"]').forEach((checkbox) => {
     checkbox.addEventListener('change', () => {
-        // Obtén la categoría del filtro seleccionado
+        //obtener la categoría del filtro seleccionado
         let categoriaSeleccionada = checkbox.getAttribute('data-filter');
 
-        // Recorre todos los botones para mostrar/ocultar tooltips
+        // botones
         document.querySelectorAll('.btn').forEach((boton) => {
             let categoriaBoton = boton.getAttribute('data-category');
 
             if (checkbox.checked && categoriaBoton === categoriaSeleccionada) {
-                // Mostrar tooltip si la categoría coincide
+                // Muestra el tooltip
                 boton.classList.add('show-tooltip');
+                tooltipsActivos[categoriaBoton] = true; //guarda activo
             } else if (!checkbox.checked && categoriaBoton === categoriaSeleccionada) {
-                // Ocultar
+                // Oculta el tooltip
                 boton.classList.remove('show-tooltip');
+                delete tooltipsActivos[categoriaBoton]; //elimina activo
             }
         });
+    });
+});
+
+
+document.querySelectorAll('.btn').forEach((boton) => {
+    let categoriaBoton = boton.getAttribute('data-category');
+
+    boton.addEventListener('mouseenter', () => {
+        // Si el checkbox correspondiente está desmarcado o el tooltip está activo muestra el tooltip
+        let checkbox = document.querySelector(`.checkbox-container input[data-filter="${categoriaBoton}"]`);
+        if (!checkbox.checked || tooltipsActivos[categoriaBoton]) {
+            boton.classList.add('show-tooltip');
+        }
+    });
+
+    boton.addEventListener('mouseleave', () => {
+        // Oculta el tooltip si no está activo
+        if (!tooltipsActivos[categoriaBoton]) {
+            boton.classList.remove('show-tooltip');
+        }
     });
 });
