@@ -60,7 +60,6 @@ root.innerHTML = `
 <div class="info-contenedor"></div>
 `;
 
-
 let filtros = document.querySelector('.filtros');
 let infocontenedor = document.querySelector('.info-contenedor');
 
@@ -68,59 +67,68 @@ let tooltipsActivos = {};
 
 document.querySelectorAll('.btn').forEach((boton, indice) => {
     boton.addEventListener('click', () => {
-        
-        let datos = descripciones[indice]; 
+        let datos = descripciones[indice];
+
+        let listaCaracteristicas = datos.caracteristicas.map(caracteristica => `<li>${caracteristica}</li>`).join("");
+        let listadoImagenes = datos.imagenes.map(imagen => 
+            `<div><img src="${imagen}" alt="${datos.titulo}" class="imagen-info"></div>`
+        ).join("");
+
         infocontenedor.innerHTML = `
             <div class="info-contenido">
                 <h1>${datos.titulo}</h1>
                 <p>${datos.descripcion}</p>
+                <h2>Características</h2>
+                <ul>${listaCaracteristicas}</ul>
+                <h2>Ejemplos</h2>
+                <div class="imagenes">${listadoImagenes}</div>
                 <button class="btn-regresar">Regresar</button>
+                <button class="btn-descargar">Descargar Información</button>
             </div>
         `;
-        // Oculta la sección de filtros
+
         filtros.classList.add('hidden');
-        // Muestra el contenedor de información
         infocontenedor.classList.add('visible');
 
-        // Evento para el botón de regresar
         document.querySelector('.btn-regresar').addEventListener('click', () => {
-            // Muestra la sección de filtros 
             filtros.classList.remove('hidden');
             infocontenedor.classList.remove('visible');
             infocontenedor.innerHTML = ''; // Limpia el contenido
         });
+
+        document.querySelector('.btn-descargar').addEventListener('click', () => {
+            html2canvas(document.querySelector('.info-contenido')).then(canvas => {
+                let link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = 'informacion.png';
+                link.click();
+            });
+        });
     });
 });
 
-
 document.querySelectorAll('.checkbox-container input[type="checkbox"]').forEach((checkbox) => {
     checkbox.addEventListener('change', () => {
-        //obtener la categoría del filtro seleccionado
         let categoriaSeleccionada = checkbox.getAttribute('data-filter');
 
-        // botones
         document.querySelectorAll('.btn').forEach((boton) => {
             let categoriaBoton = boton.getAttribute('data-category');
 
             if (checkbox.checked && categoriaBoton === categoriaSeleccionada) {
-                // Muestra el tooltip
                 boton.classList.add('show-tooltip');
-                tooltipsActivos[categoriaBoton] = true; //guarda activo
+                tooltipsActivos[categoriaBoton] = true; // guarda activo
             } else if (!checkbox.checked && categoriaBoton === categoriaSeleccionada) {
-                // Oculta el tooltip
                 boton.classList.remove('show-tooltip');
-                delete tooltipsActivos[categoriaBoton]; //elimina activo
+                delete tooltipsActivos[categoriaBoton]; // elimina activo
             }
         });
     });
 });
 
-
 document.querySelectorAll('.btn').forEach((boton) => {
     let categoriaBoton = boton.getAttribute('data-category');
 
     boton.addEventListener('mouseenter', () => {
-        // Si el checkbox correspondiente está desmarcado o el tooltip está activo muestra el tooltip
         let checkbox = document.querySelector(`.checkbox-container input[data-filter="${categoriaBoton}"]`);
         if (!checkbox.checked || tooltipsActivos[categoriaBoton]) {
             boton.classList.add('show-tooltip');
@@ -128,7 +136,6 @@ document.querySelectorAll('.btn').forEach((boton) => {
     });
 
     boton.addEventListener('mouseleave', () => {
-        // Oculta el tooltip si no está activo
         if (!tooltipsActivos[categoriaBoton]) {
             boton.classList.remove('show-tooltip');
         }
