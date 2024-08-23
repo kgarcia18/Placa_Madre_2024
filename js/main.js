@@ -6,11 +6,11 @@ root.innerHTML = `
 <div class="header">
     <div class="title">TechMap</div>
     <div class="clasificacion">
-        <div>PC</div>
-        <div>GPU</div>
-        <div>CPU</div>
-        <div>Fuentes de poder</div>
-        <div>Placa madre</div>
+        <div id="pc">PC</div>
+        <div id="gpu">GPU</div> <!-- Agregado un id para identificar fácilmente -->
+        <div id="cpu">CPU</div>
+        <div id="fp">Fuentes de poder</div>
+        <div id="pm">Placa madre</div>
         <div class="item github">
             <a href="https://github.com/kgarcia18?tab=repositories">Ir a GitHub</a>
         </div>
@@ -65,45 +65,58 @@ let infocontenedor = document.querySelector('.info-contenedor');
 
 let tooltipsActivos = {};
 
+function mostrarInformacion(indice) {
+    let datos = descripciones[indice];
+
+    let listaCaracteristicas = datos.caracteristicas.map(caracteristica => `<li>${caracteristica}</li>`).join("");
+    let listadoImagenes = datos.imagenes.map(imagen => 
+        `<div><img src="${imagen}" alt="${datos.titulo}" class="imagen-info"></div>`
+    ).join("");
+
+    infocontenedor.innerHTML = `
+        <div class="info-contenido">
+            <h1>${datos.titulo}</h1>
+            <p>${datos.descripcion}</p>
+            <h2>Características</h2>
+            <ul>${listaCaracteristicas}</ul>
+            <h2>Ejemplos</h2>
+            <div class="imagenes">${listadoImagenes}</div>
+            <button class="btn-regresar">Regresar</button>
+            <button class="btn-descargar">Descargar Información</button>
+        </div>
+    `;
+
+    filtros.classList.add('hidden');
+    infocontenedor.classList.add('visible');
+
+    document.querySelector('.btn-regresar').addEventListener('click', () => {
+        filtros.classList.remove('hidden');
+        infocontenedor.classList.remove('visible');
+        infocontenedor.innerHTML = ''; // Limpia el contenido
+    });
+
+    document.querySelector('.btn-descargar').addEventListener('click', () => {
+        // Ocultar botones
+        document.querySelector('.btn-regresar').style.display = 'none';
+        document.querySelector('.btn-descargar').style.display = 'none';
+
+        html2canvas(document.querySelector('.info-contenido')).then(canvas => {
+            let link = document.createElement('a');
+            link.href = canvas.toDataURL('image/png');
+            link.download = 'informacion.png';
+            link.click();
+            
+            // Mostrar botones de nuevo
+            document.querySelector('.btn-regresar').style.display = '';
+            document.querySelector('.btn-descargar').style.display = '';
+        });
+    });
+}
+
+
 document.querySelectorAll('.btn').forEach((boton, indice) => {
     boton.addEventListener('click', () => {
-        let datos = descripciones[indice];
-
-        let listaCaracteristicas = datos.caracteristicas.map(caracteristica => `<li>${caracteristica}</li>`).join("");
-        let listadoImagenes = datos.imagenes.map(imagen => 
-            `<div><img src="${imagen}" alt="${datos.titulo}" class="imagen-info"></div>`
-        ).join("");
-
-        infocontenedor.innerHTML = `
-            <div class="info-contenido">
-                <h1>${datos.titulo}</h1>
-                <p>${datos.descripcion}</p>
-                <h2>Características</h2>
-                <ul>${listaCaracteristicas}</ul>
-                <h2>Ejemplos</h2>
-                <div class="imagenes">${listadoImagenes}</div>
-                <button class="btn-regresar">Regresar</button>
-                <button class="btn-descargar">Descargar Información</button>
-            </div>
-        `;
-
-        filtros.classList.add('hidden');
-        infocontenedor.classList.add('visible');
-
-        document.querySelector('.btn-regresar').addEventListener('click', () => {
-            filtros.classList.remove('hidden');
-            infocontenedor.classList.remove('visible');
-            infocontenedor.innerHTML = ''; // Limpia el contenido
-        });
-
-        document.querySelector('.btn-descargar').addEventListener('click', () => {
-            html2canvas(document.querySelector('.info-contenido')).then(canvas => {
-                let link = document.createElement('a');
-                link.href = canvas.toDataURL('image/png');
-                link.download = 'informacion.png';
-                link.click();
-            });
-        });
+        mostrarInformacion(indice);
     });
 });
 
@@ -141,3 +154,18 @@ document.querySelectorAll('.btn').forEach((boton) => {
         }
     });
 });
+
+
+// Evento de los botones del header
+function handleClick(className) {
+    let btn = document.querySelector(`.btn.${className}`);
+    let btnIndex = Array.from(document.querySelectorAll('.btn')).indexOf(btn);
+    mostrarInformacion(btnIndex);
+}
+document.querySelector('#gpu').addEventListener('click', () => handleClick('btn4'));
+document.querySelector('#cpu').addEventListener('click', () => handleClick('btn9'));
+document.querySelector('#pc').addEventListener('click', () => handleClick('btn12'));
+document.querySelector('#fp').addEventListener('click', () => handleClick('btn8'));
+document.querySelector('#pm').addEventListener('click', () => handleClick('btn1'));
+
+

@@ -30,6 +30,9 @@
   align-items: center;
   justify-content: space-between;
 }
+.clasificacion div{
+  cursor: pointer;
+}
 .github a {
   padding: 5px 10px;
   background-color: #000;
@@ -101,8 +104,8 @@
   grid-template-columns: repeat(50, 1fr);
   grid-template-rows: repeat(50, 1fr);
 }
-.btn {
-  background-color: rgba(153, 205, 50, 0);
+.btn{
+  background-color: rgba(255, 255, 255, 0);
   cursor: pointer;
   position: relative;
 }

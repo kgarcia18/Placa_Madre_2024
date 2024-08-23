@@ -9,10 +9,10 @@ export let descripciones = [
             "Expansión fácil: Añade o quita periféricos fácilmente"
         ],
         imagenes: [
-            "https://bighardware.es/wp-content/uploads/2021/03/Pci-slots.jpg",
-            "https://upload.wikimedia.org/wikipedia/commons/6/64/Buses_pci.jpg",
-            "https://previews.123rf.com/images/yodaswaj/yodaswaj1602/yodaswaj160200110/52221695-primer-de-la-placa-base-interconexi%C3%B3n-de-componentes-perif%C3%A9ricos.jpg",
-            "https://lupisdij.wordpress.com/wp-content/uploads/2015/10/11.jpg"
+            "./img/img1.png",
+            "./img/img2.png",
+            "./img/img3.png",
+            "./img/img4.png"
         ]
     },
     { 
@@ -25,10 +25,10 @@ export let descripciones = [
             "Desgaste gradual: Pierde capacidad con el tiempo y el uso"
         ],
         imagenes: [
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScuO8OuF69vEODbwQUu6TJ3SvW6ofb1QZXlA&s",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGJIdif0BkiLrq8mHYUYjpoNT3lvqmkTtS8A&s",
-            "https://mantenimientoprev.com/wp-content/uploads/2022/08/pila-placa-base.jpg",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpdadSlPFKQIVM9HAMQjmEPLIdNvqsSnYKNA&s"
+            "./img/img5.png",
+            "./img/img6.png",
+            "./img/img7.png",
+            "./img/img8.png"
         ] 
     },
     { 
@@ -41,10 +41,10 @@ export let descripciones = [
             "Gestión de energía: Optimiza el consumo energético de los periféricos."
         ],
         imagenes: [
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQhqF10OF4v1l4kmMr7TcH1W3JK2DOnDJOPg&s",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp2Rn5LN3dF7Bvtb8wFyd0pNyr4Hzuexng0ka1jUwz5cyyLLf48MhAz5NJq3uPuVpyOhY&usqp=CAU",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuugKRMoS_R5xiXuMOTtlKLsYU-Nhz6R5h-lVaYPPNF1ijoqkxFVNuZonRT6TArfHn_oU&usqp=CAU",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVcy1pDZQhRs6Gz2mRKPvfmAyLXnLolfHxEpfrJvf6cBX9I6jtXv_1F-hKLdLicdGQaNU&usqp=CAU"
+            "./img/img9.png",
+            "./img/img10.png",
+            "./img/img11.png",
+            "./img/img12.png"
         ]
     },
     {
@@ -57,10 +57,10 @@ export let descripciones = [
             "Aceleración 3D: Mejora el rendimiento en juegos y aplicaciones que requieren gráficos tridimensionales."
         ],        
         imagenes: [
-            "https://d22k5h68hofcrd.cloudfront.net/magefan_blog/Guia_de_compra_para_GPU_Como_escoger_la_tarjeta_grafica_indicada_1.jpg",
-            "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2017/11/gtx-1080-gaming-x.jpg?tf=3840x",
-            "https://hiraoka.com.pe/media/wysiwyg/c_mo_funciona_una_tarjeta_gr_fica.jpg",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtCNbU4aysDnlT1JFVtDzuF9XrArvsIKN8ag&s"
+            "./img/img13.png",
+            "./img/img14.png",
+            "./img/img15.png",
+            "./img/img16.png"
         ]
     },
     { 
@@ -73,10 +73,10 @@ export let descripciones = [
             "Expansión: Ofrece la posibilidad de añadir más dispositivos a la computadora según las necesidades del usuario."
         ],
         imagenes: [
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNONpUm9bYykXqXiAnEiQyl-MI8Fpw_0l1vg&s",
-            "https://thumbs.dreamstime.com/b/conectores-en-la-parte-posterior-de-motherboard-del-equipo-usb-hdmi-lan-placa-base-cierre-173444444.jpg",
-            "https://t7m8e9c8.rocketcdn.me/wp-content/uploads/2017/11/Placa-base-Gigabyte-AB-350-Gaming-Wifi-18.jpg",
-            "https://thumbs.dreamstime.com/b/puertos-y-conectores-de-audio-posterior-spdif-la-placa-base-211389987.jpg"
+            "./img/img17.png",
+            "./img/img18.png",
+            "./img/img19.png",
+            "./img/img20.png"
         ]
     },
     { 
@@ -89,10 +89,10 @@ export let descripciones = [
             "Compatibilidad: Admite múltiples versiones (USB 2.0, 3.0, 3.1, 3.2 y USB-C) para diferentes velocidades y capacidades."
         ],        
         imagenes: [
-            "https://www.profesionalreview.com/wp-content/uploads/2020/09/C%C3%B3mo-solucionar-velocidad-usb-5.jpg",
-            "https://www.laitadigital.com/wp-content/uploads/2023/05/conector-usb-8.jpg",
-            "https://acf.geeknetic.es/imgw/imagenes/auto/2023/8/11/ti6-colores-usb.jpg?f=webp",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT93vP49HZpta9KFH2GKLwqhzepTmzWXxODkLvs7U75RrL8a5KH0GcUOENeTHaHHtfATyU&usqp=CAU"
+            "./img/img21.png",
+            "./img/img22.png",
+            "./img/img23.png",
+            "./img/img24.png"
         ]
     },
     { 
@@ -105,10 +105,10 @@ export let descripciones = [
             "Velocidad limitada: Ofrece velocidades de transferencia más bajas en comparación con puertos modernos como USB."
         ],        
         imagenes: [
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzvKRCAyH8Kh9xkJTkCsZN6_TqR1sZF81rkws6S9ueHiqo-i3IN4QjehazY_EB-fiPEow&usqp=CAU",
-            "https://www.cavsi.com/espanol/wp-content/uploads/puertos-conectores/puerto-paralelo.jpg",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaX6ja2BIiWZGZoKF4BrHOTIYWLJlt86_Wz1Wbi1Vu1pLUX5nDhNI40cOqFi7K8qo91CQ&usqp=CAU",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Parallel_computer_printer_port.jpg/640px-Parallel_computer_printer_port.jpg"
+            "./img/img25.png",
+            "./img/img26.png",
+            "./img/img27.png",
+            "./img/img28.png"
         ]
     },
     { 
@@ -121,10 +121,10 @@ export let descripciones = [
             "Diseño de aletas: Incluye aletas o aletas para aumentar el área de superficie y mejorar la transferencia de calor al entorno."
         ],        
         imagenes: [
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZRBKOSXboesH3aAWM8vr9n7J1aj-PJzJ2QA&s",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBqwSK8yn_Dp3B_rPZqpEnHhwPgFRrw-zJwQRCV0zVgnFQA6NJkDi6g77MnI6byuYAKFc&usqp=CAU",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXoIDw_4C7TX_D7pyfBRESq_gSfqoAbnxY9sp1wNwrNTSKyjw6VYSbMqaAYbOsi6cqAio&usqp=CAU",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKpn1k1MnAeHKRMUjFMyg8yHg34VlR_M9FqzUhgdTwxuduBaaqCXXIvn6d5OIWp8Pg1G0&usqp=CAU"
+            "./img/img29.png",
+            "./img/img30.png",
+            "./img/img31.png",
+            "./img/img32.png"
         ]
     },
     { 
@@ -137,10 +137,10 @@ export let descripciones = [
             "Caché integrada: Incluye memoria caché para almacenar datos y instrucciones de uso frecuente, mejorando la velocidad de acceso."
         ],
         imagenes: [
-            "https://concepto.de/wp-content/uploads/2014/08/CPU-e1551228076500.jpg",
-            "https://i.insider.com/60402d8eb46d720018b04c1f?width=700",
-            "https://geekawhat.com/wp-content/uploads/2022/05/Best-CPU-Motherboards-2022-Ryzen-3-3100.jpg",
-            "https://depor.com/resizer/BFBMUAG_UVWeIO1oxcX8YSea814=/580x330/smart/filters:format(jpeg):quality(90)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/FLPYCSJC2NCYLBRA2U6552X7IE.jpg"
+            "./img/img33.png",
+            "./img/img34.png",
+            "./img/img35.png",
+            "./img/img36.png"
         ]
     },
     { 
@@ -153,10 +153,10 @@ export let descripciones = [
             "Configuración dual/triple/cuádruple canal: Permite el uso de varias ranuras en configuraciones de canal para mejorar el rendimiento de la memoria."
         ],        
         imagenes: [
-            "https://previews.123rf.com/images/maabaff/maabaff2101/maabaff210100024/161789528-cuatro-ranuras-para-m%C3%B3dulos-de-memoria-ram-ddr4-en-una-placa-base-de-pc-negra-moderna-componentes.jpg",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdgSCAKEO_fWQ5k0Gh0PXa1BQpRUSg8R664w&s",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWY4czeQawi0ivp2ZjrHRMZHta2FnNYlwtz4fKiDA7tU3JWsAJNfJO9BMVWYzaOhFApZk&usqp=CAU",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXQ7DDLtUVwsp1oeOmI9OhtN6SkzO8vMkcpzFb59wvuLg6EQFxkc56dfCXMtsZ1UcoLT0&usqp=CAU"
+            "./img/img37.png",
+            "./img/img38.png",
+            "./img/img39.png",
+            "./img/img40.png"
         ]
     },
     { 
@@ -169,10 +169,10 @@ export let descripciones = [
             "Configuración maestra/esclava: Permite configurar los dispositivos conectados en modo maestro o esclavo para gestionar el acceso a los datos."
         ],        
         imagenes: [
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQubUUj0CCPYcPB0qr-WcIfvClLFHXiW4avqA&s",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Qdfmut-2EUjwb9HNsvjFWa5lBqRPTP00bJVJq5RBKbU63xIA3jkxIykKvYwhynTknHM&usqp=CAU",
-            "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRoKwiTGZtsuRqpdY2SdT4kkcJ7U1vb6IhinVOZsJd6IsuLpTjMR_KLVvHkKHeahBVnpg0NXezLkEWmfwD2-pqBaClfwZ1Y-yz8x1PlkWygP318EdlLY3yKHYlLfG11aHXKZwMfAN8NcG0/w1200-h630-p-k-no-nu/17.jpg",
-            "https://i0.wp.com/3.bp.blogspot.com/_eObM_uOWHAU/SAVIyHInc8I/AAAAAAAAAFU/4B0VMByOpPs/s320/1.JPG"
+            "./img/img41.png",
+            "./img/img42.png",
+            "./img/img43.png",
+            "./img/img44.png"
         ]
     },
     { 
@@ -185,10 +185,10 @@ export let descripciones = [
             "Actualización del firmware: Ofrece actualizar el firmware para mejorar la compatibilidad y agregar nuevas funcionalidades."
         ],        
         imagenes: [
-            "https://phoenixnap.com/glossary/wp-content/uploads/2024/05/what-is-bios.jpg",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlcBY9YfW-qa5cNADBnvj0l-jYY53Iys9t-Q&s",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrat6FNbYD5WfmkFW__l1AUkxxKtPUgWiLbQ&s",
-            "https://www.shutterstock.com/image-photo/sochi-russia-march-22-2022-260nw-2140742619.jpg"
+            "./img/img45.png",
+            "./img/img46.png",
+            "./img/img47.png",
+            "./img/img48.png"
         ]
     }
 ];
